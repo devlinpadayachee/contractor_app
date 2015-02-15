@@ -1,0 +1,99 @@
+<ion-view title="Contractor: {{contractor.name}}">
+  <ion-content>
+
+  			<div class="card">
+
+				<div class="item item-divider">
+				    Contractor
+				</div>
+
+				<div class="item item-text-wrap">
+
+					<div class="list">
+					  
+					  <label class="item item-thumbnail-left">
+					  	<img src="img/person_placeholder.png">
+					   	<h2>{{contractor.name}}</h2>
+					 	<p class="subdued">{{contractor.mobile}}</p>
+					 	<p>
+					 		 <a href="#" class="subdued">{{contractor.likes}} Likes</a>
+							 <a href="#" class="subdued">5 Comments</a>
+					    </p>
+
+					    <rating class = "energized" ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+
+					  </label>
+
+					
+
+	
+						
+
+					
+					</div>		
+
+				
+				
+				
+				    	
+				</div>
+
+				<div class="item item-divider">
+
+						<div class="row row-center center-nopadding">
+						  <div class="col col-33">
+						  		<a ng-click="thumbsup()" data-tap-disabled="true">
+						      		<i class="icon ion-thumbsup thumbsupicons" ></i>
+						      		
+						    	</a>
+						  </div>
+						  <div class="col col-33 center-nopadding" data-tap-disabled="true">
+						  		<a>
+						      		<i class="icon ion-chatbox thumbsupicons"></i>
+						      		
+						    	</a>
+						  </div>
+						  <div class="col col-33 center-nopadding" data-tap-disabled="true">
+						  		<a>
+						      		<i class="icon ion-share thumbsupicons"></i>
+						      		
+						    	</a>
+						   </div>
+						</div>
+					    
+				</div>
+
+				<div class="item item-divider">
+				    Book {{contractor.name}}
+				</div>
+
+	
+
+				<div class="item item-divider">
+				   <label class="item item-input">
+			  			<span class="input-label">Date</span>
+			  			<input ng-model="data.date" type="date">
+					</label>
+					<p>{{chosen_date | date:'dd/MM/yyyy'}}</p>
+					<label class="item item-input">
+			  			<span class="input-label">Time</span>
+			  			<input ng-model="data.time" type="time">
+					</label>
+
+					 <button class="button button-positive button-block" ng-if="jobexists == 'searching'" ng-disabled="false">Searching For Existing Jobs</button>
+
+					 <button class="button button-positive button-block" ng-click="bookcontractor()" ng-if="!jobexists">Request Help</button>
+
+					 <button class="button button-dark button-block" ng-if="jobexists" ng-disabled="true">Open Job Already Exists</button>
+
+				</div>
+
+					
+
+				
+
+			</div>
+
+  	
+  </ion-content>
+</ion-view>

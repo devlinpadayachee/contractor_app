@@ -1,0 +1,24 @@
+<ion-view title="Jobs">
+  <ion-content>
+  	<div class="list list-inset">
+
+  		<div class="list list-inset" ng-if="jobs.length == 0">
+	      <a class="item">
+	        <p>You currently have no jobs assigned to you.</p>
+	      </a>
+	    </div>
+
+	    <div class="list list-inset" ng-if="jobs.length > 0">
+		    <a ng-repeat="job in jobs" class="item item-avatar" href="#/tab/jobdetails/{{job._id}}">
+		      <img src="img/person_placeholder.png">
+		      <h2>{{job.requested_contractor.name}}</h2>
+		      <p>Job Status: {{job.status}}</p>
+		      <p>Job Date: {{job.date}}</p>
+		      <p>Job Time: {{job.time}}</p>
+		    </a>
+	    </div>
+
+	</div>
+  </ion-content>
+</ion-view>
+

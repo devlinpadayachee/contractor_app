@@ -1,0 +1,3 @@
+cordova build --release android
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore customer.keystore CordovaApp-release-unsigned.apk customer_app
+zipalign -v 4 CordovaApp-release-unsigned.apk Customer.apk

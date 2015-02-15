@@ -1,0 +1,87 @@
+
+
+<script id="contractor_categories.html" type="text/ng-template">
+  	<ion-popover-view>
+    	<ion-header-bar>
+      		<h1 class="title">Contractor Categories</h1>
+    	</ion-header-bar>
+    	<ion-content>
+
+            <div class="list">
+
+              <div class="item item-divider">
+                Maintenance
+              </div>
+
+              <a class="item item-avatar" ng-click="set_category($event,'plumbers')">
+                <img src="img/pipe7.png">
+                <h2>Plumbers</h2>
+   
+              </a>
+
+              <a class="item item-avatar" ng-click="set_category($event,'builders')">
+                <img src="img/worker20.png">
+                <h2>Builders</h2>
+   
+              </a>
+
+              <a class="item item-avatar" ng-click="set_category($event,'handymen')">
+                <img src="img/helmet6.png">
+                <h2>Handymen</h2>
+   
+              </a>
+
+              <a class="item item-avatar" ng-click="set_category($event,'electricians')">
+                <img src="img/plug37.png">
+                <h2>Electricians</h2>
+   
+              </a>
+
+         </div>
+
+    	</ion-content>
+  	</ion-popover-view>
+</script>
+
+
+  <script type="text/ng-template" id="searchbox.tpl.html">
+       
+            
+      
+            <input type="text" class="searchbox" placeholder = "Set Job Location">
+
+       
+  </script>
+
+<ion-view title="Dashboard">
+  <ion-content scroll="false">
+
+
+
+          <div class="bar bar-header searchbox" id = "searchbarcontrol">
+            
+          </div>
+
+	
+	  			<ui-gmap-google-map control="map.control" data-tap-disabled="true" center='map.center' zoom='map.zoom' options = "map.options" events="map.events">
+            <ui-gmap-search-box template="searchbox.template" events="searchbox.events" parentdiv="searchbox.parentdiv"></ui-gmap-search-box>
+						<ui-gmap-markers  models="markers" coords="'self'" click="'click'" icon="'icon'" options = "'options'"></ui-gmap-markers>
+					</ui-gmap-google-map> 
+
+	
+					</br>
+
+	  				
+	  	
+		
+			 		<div class="bar bar-footer no-padding">
+					       <button class="button button-block button-outline button-positive no-padding" ng-click="openPopover($event)">SEARCH FOR A CONTRACTOR</button>
+             <!--     <button class="button button-block button-outline button-positive no-padding" ng-click="set_category()">SEARCH FOR A CONTRACTOR</button> -->
+					</div>
+						
+		
+		
+			
+	
+  </ion-content>
+</ion-view>

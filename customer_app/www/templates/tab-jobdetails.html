@@ -1,0 +1,79 @@
+<ion-view title="Job Details">
+  <ion-content>
+
+  			<div class="card">
+
+				<div class="item item-divider">
+				    Requested Job
+				</div>
+
+				<div class="item item-text-wrap">
+
+					<div class="list">
+					  
+					  <label class="item item-input">
+					    <span class="input-label">Contractor:</span>
+					    {{job.requested_contractor.name}}
+					  </label>
+					  <label class="item item-input">
+					    <span class="input-label">Mobile:</span>
+					    {{job.requested_contractor.mobile}}
+					  </label>
+
+					  <label class="item item-input">
+					    <span class="input-label">Date:</span>
+					    	{{job.date}}
+					  </label>
+
+					   <label class="item item-input">
+					    <span class="input-label">Time:</span>
+					    	{{job.time}}
+					  </label>
+
+					</div>		
+
+				
+				
+				
+				    	
+				</div>
+
+				<div class="item item-divider" ng-if="job.status == 'pending'">
+				  		<button class="button button-assertive button-block" ng-click="cancel()">Cancel Job</button>
+				</div>
+
+				<div class="item item-divider" ng-if="job.status == 'accepted'">
+						<button class="button button-royal button-block" ng-click="contractor_arrived()">Contractor Arrived</button>
+				</div>
+
+				<div class="item item-divider" ng-if="job.status == 'contractor arrived'">
+						<button class="button button-balanced button-block" ng-click="job_completed()">Job Completed</button>
+				</div>
+
+				<div class="item item-divider" ng-if="job.status == 'declined' || job.status == 'cancelled'">
+
+					<button class="button button-assertive button-block" disabled="true">Job Cancelled</button>
+				 
+				</div>
+
+				<div class="item item-divider" ng-if="job.status == 'completed'">
+
+				  <rating class = "energized" ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" ></rating>
+				  <button class="button button-assertive button-block" ng-click="rate_contractor()">Rate this Contractor</button>
+
+				</div>
+
+				<div class="item item-divider" ng-if="job.status == 'completed and rated'">
+						<button class="button button-balanced button-block" disabled="true">Job Completed and Rated</button>
+				</div>
+
+
+
+				
+
+			</div>
+
+  
+  </ion-content>
+</ion-view>
+
